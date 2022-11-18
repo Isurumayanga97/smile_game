@@ -1,0 +1,44 @@
+body {
+    /*background: rgb(11, 12, 12);*/
+    /*background: linear-gradient(90deg, rgba(11, 12, 12, 1) 0%, rgba(34, 37, 37, 1) 100%);*/
+    background: #374151;
+}
+
+.glass {
+    color: white;
+    background: #27272a;
+}
+
+.custom-form {
+    color: white;
+}
+.custom-form input {
+    background: #374151;
+    color: white;
+    outline: #e58d27;
+    border-color: #e58d27;
+}
+
+.custom-form input:focus {
+    background: #374151;
+    color: white;
+    outline: #e58d27;
+    border-color: #f5c944!important;
+    box-shadow: 0 0 0 0.2rem rgb(211 157 37 / 25%);
+}
+
+.btn-yellow {
+    background: #e58d27;
+}
+.btn-yellow:hover {
+    background: #f5c944;
+}
+.back-btn {
+    color: white;
+    font-size: 2rem;
+    line-height: 64px;
+}
+
+.back-btn:hover {
+    color: #f5c944;
+}

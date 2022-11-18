@@ -1,0 +1,31 @@
+body {
+    /*background: rgb(11, 12, 12);*/
+    /*background: linear-gradient(90deg, rgba(11, 12, 12, 1) 0%, rgba(34, 37, 37, 1) 100%);*/
+    background: #374151;
+}
+
+.main-menu {
+    width: 100%;
+    max-width: 400px;
+}
+
+.main-menu > button {
+    font-size: 1.5rem;
+    background: #e58d27;
+    color: black;
+    display: block;
+    width: 100%;
+    outline: none;
+}
+
+.main-menu > button:hover {
+    background: #f5c944;
+}
+
+a {
+    all: unset;
+}
+
+a:hover {
+    all: unset;
+}
