@@ -1,7 +1,3 @@
-function register() {
-
-}
-
 function checkPasswordConfirmation() {
     const password = document.querySelector('input[name=password]');
     const confirm = document.querySelector('input[name=c_password]');
@@ -11,5 +7,8 @@ function checkPasswordConfirmation() {
     } else {
         $('#confirm-text').html('password confirmation failed!').css('display', 'block');
     }
+}
 
+function closeErrorModal() {
+    document.getElementById('loginErrorModal').style.display = 'none';
 }

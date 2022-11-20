@@ -46,20 +46,6 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param array $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-//        return Validator::make($data, [
-//            'name' => ['required', 'string', 'max:255'],
-//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-//            'password' => ['required', 'string', 'min:8', 'confirmed'],
-//        ]);
-    }
 
     /**
      * Create a new user instance after a valid registration.
@@ -73,14 +59,22 @@ class RegisterController extends Controller
         return view('auth/register');
     }
 
-
     public function create(UserStoreRequest $request)
     {
-
         $validated = $request->validated();
-        dd($validated);
 
-
+        try {
+            User::create([
+                'name' => $validated['name'],
+                'email' => $validated['email'],
+                'password' => Hash::make($validated['password']),
+                'mode'=>'EASY',
+                'info'=>'n publishing and graphic design, Lorem ipsum is a placeholder text commonly'
+            ]);
+            return redirect('/');
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
     }
 
 

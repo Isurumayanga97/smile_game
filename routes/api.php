@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\GameController;
+use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,13 +22,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-//Route::post('register', [RegisterController::class,'create']);
-//
-//Route::get('games-board', function (Request $request) {
-//
-//
-////    return view('game/game-board');
-//
-//});
-//
-//Route::get('games-board', [GameController::class,'index']);
+Route::post('store-attempt', [GameController::class,'storeAttempt']);
+Route::get('claim-bonus/{id}', [GameController::class,'claimBonus']);
+Route::get('refresh-games-board/{id}', [GameController::class,'refreshGame']);
+Route::get('submit-answer/{id}', [GameController::class,'submitAnswer']);
+
+
+//Temp
+Route::post('bonus/{id}', [GameController::class,'checkUserBonus']);
+Route::get('leaderboard', [UserController::class,'loadLeaderboard']);

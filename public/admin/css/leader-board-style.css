@@ -57,3 +57,11 @@ tr:first-child > td {
     background: #e58d27;
     color: black;
 }
+
+.card-title{
+    color: white;
+}
+
+.card-text{
+    color: white;
+}

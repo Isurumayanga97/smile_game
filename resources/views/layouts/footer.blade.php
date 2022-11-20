@@ -11,13 +11,12 @@
 {{--<script src="{{ asset('assets/js/script.js') }}"></script>--}}
 <script src="{{ asset('assets/js/app.js') }}"></script>
 
-
-
+<script src="https://code.jquery.com/jquery-3.1.1.min.js">
 
 <script src="{{ asset('assets/js/number-swiper.js') }}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{ asset('assets/js/custom/spinner.js') }}"></script>
-<script src="{{ asset('assets/js/custom/common.js') }}"></script>
+<script src="{{ asset('assets/js/custom/game.js') }}"></script>
 <script src="{{ asset('assets/js/custom/auth.js') }}"></script>
 
 

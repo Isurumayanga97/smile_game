@@ -60,7 +60,9 @@ body {
     font-weight: bold;
 }
 
-
+.btn-next:hover{
+    background-color:yellow!important;
+}
 
 
 

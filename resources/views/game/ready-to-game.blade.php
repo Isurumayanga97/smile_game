@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Smile☺</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -31,8 +31,8 @@
             <button class="btn rounded-pill py-3 px-5 mb-3 font-weight-bold">
                 <a href="{{url('settings')}}" onclick="loadSpinner()"><i class="fa-solid fa-gear"></i> Settings</a>
             </button>
-            <button class="btn rounded-pill py-3 px-5 mb-3 font-weight-bold"><i
-                    class="fa-solid fa-right-from-bracket"></i> Exit
+            <button class="btn rounded-pill py-3 px-5 mb-3 font-weight-bold">
+                <a href="{{'sign-out'}}" onclick="loadSpinner()"><i class="fa-solid fa-right-from-bracket"></i>Exit</a>
             </button>
         </div>
 

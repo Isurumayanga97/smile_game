@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 @extends('layouts.app')
 
 
@@ -11,7 +12,12 @@
                 <p id="game-title-emoji">(̶◉͛‿◉̶)</p>
             </div>
 
-            <img src="https://www.sanfoh.com/uob/smile/data/sbaa82d43d3429001d5d5deb66cn302.png"
+            <!--Store details-->
+            <input type="text" hidden value="{{$gameDetails}}" id="game-details">
+            <input type="text" hidden value="{{$gameData->solution}}" id="solution">
+            <input type="text" hidden value="{{Auth::id()}}" id="user-details">
+
+            <img src="{{$gameData->question}}"
                  alt="Five Bells logo" id="game-image">
         </div>
 
@@ -29,16 +35,36 @@
             <h2 id="select-number-text">Select Number</h2>
             <div class="card card-body border-0 shadow mt-1 justify-content-center">
                 <div class="btn-grid">
-                    <button type="button" class="btn btn-success w-100" id="btnZero" onclick="nextGame(0)">0</button>
-                    <button type="button" class="btn btn-success w-100" id="btnOne" onclick="nextGame(1)">1</button>
-                    <button type="button" class="btn btn-success w-100" id="btnTwo" onclick="nextGame(2)">2</button>
-                    <button type="button" class="btn btn-success w-100" id="btnThree" onclick="nextGame(3)">3</button>
-                    <button type="button" class="btn btn-success w-100" id="btnFour" onclick="nextGame(4)">4</button>
-                    <button type="button" class="btn btn-success w-100" id="btnFive" onclick="nextGame(5)">5</button>
-                    <button type="button" class="btn btn-success w-100" id="btnSix" onclick="nextGame(6)">6</button>
-                    <button type="button" class="btn btn-success w-100" id="btnSeven" onclick="nextGame(7)">7</button>
-                    <button type="button" class="btn btn-success w-100" id="btnEight" onclick="nextGame(8)">8</button>
-                    <button type="button" class="btn btn-success w-100" id="btnNine" onclick="nextGame(9)">9</button>
+                    <button type="button" class="btn btn-success w-100" id="btn-0"
+                            onclick="nextGame(0)">0
+                    </button>
+                    <button type="button" class="btn btn-success w-100" id="btn-1"
+                            onclick="nextGame(1)">1
+                    </button>
+                    <button type="button" class="btn btn-success w-100" id="btn-2"
+                            onclick="nextGame(2)">2
+                    </button>
+                    <button type="button" class="btn btn-success w-100" id="btn-3"
+                            onclick="nextGame(3)">3
+                    </button>
+                    <button type="button" class="btn btn-success w-100" id="btn-4"
+                            onclick="nextGame(4)">4
+                    </button>
+                    <button type="button" class="btn btn-success w-100" id="btn-5"
+                            onclick="nextGame(5)">5
+                    </button>
+                    <button type="button" class="btn btn-success w-100" id="btn-6"
+                            onclick="nextGame(6)">6
+                    </button>
+                    <button type="button" class="btn btn-success w-100" id="btn-7"
+                            onclick="nextGame(7)">7
+                    </button>
+                    <button type="button" class="btn btn-success w-100" id="btn-8"
+                            onclick="nextGame(8)">8
+                    </button>
+                    <button type="button" class="btn btn-success w-100" id="btn-9"
+                            onclick="nextGame(9)">9
+                    </button>
                 </div>
             </div>
 
