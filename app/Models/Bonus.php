@@ -11,9 +11,19 @@ class Bonus extends Model
 {
     use HasFactory;
 
+    /**
+     * @var bool
+     */
     public $timestamps = true;
+
+    /**
+     * @var string
+     */
     protected $table = "bonuses";
 
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'fk_bonus_userId',
         'no_of_bonus',

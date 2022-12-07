@@ -10,9 +10,19 @@ class UserAttempt extends Model
 {
     use HasFactory;
 
+    /**
+     * @var bool
+     */
     public $timestamps = true;
+
+    /**
+     * @var string
+     */
     protected $table = "user_attempts";
 
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'fk_attempt_userId',
         'fk_attempt_gameId',

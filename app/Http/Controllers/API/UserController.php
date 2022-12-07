@@ -8,6 +8,7 @@ use App\Models\UserAttempt;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
@@ -44,7 +45,6 @@ class UserController extends Controller
 
     }
 
-
     /**
      * @return Application|Factory|View
      */
@@ -75,18 +75,23 @@ class UserController extends Controller
             return strcmp($b['point'], $a['point']);
         });
 
-
         $gameDetails = User::with('attempt', 'bonus')->find(Auth::id());
 
-//        return response()->json(['data' => $leaderBoard, 'gameDetails' => $gameDetails]);
         return view('game/leader-board', ['data' => $leaderBoard, 'gameDetails' => $gameDetails]);
     }
 
+    /**
+     * @return Application|Factory|View
+     */
     public function settings()
     {
         return view('game/setting');
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function changeMode(Request $request)
     {
         $data = $request->all();

@@ -9,9 +9,19 @@ class Game extends Model
 {
     use HasFactory;
 
+    /**
+     * @var bool
+     */
     public $timestamps = true;
+
+    /**
+     * @var string
+     */
     protected $table = "games";
 
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'fk_userID',
         'participate_time',
