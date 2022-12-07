@@ -26,8 +26,5 @@ Route::post('store-attempt', [GameController::class,'storeAttempt']);
 Route::get('claim-bonus/{id}', [GameController::class,'claimBonus']);
 Route::get('refresh-games-board/{id}', [GameController::class,'refreshGame']);
 Route::get('submit-answer/{id}', [GameController::class,'submitAnswer']);
+Route::post('change-mode', [UserController::class,'changeMode']);
 
-
-//Temp
-Route::post('bonus/{id}', [GameController::class,'checkUserBonus']);
-Route::get('leaderboard', [UserController::class,'loadLeaderboard']);

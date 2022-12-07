@@ -27,7 +27,9 @@ class User extends Authenticatable
         'image',
         'mode',
         'point',
-        'info'
+        'info',
+        'updated_at',
+        'created_at'
     ];
 
     /**

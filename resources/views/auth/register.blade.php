@@ -30,6 +30,7 @@
                         <input type="password" class="form-control" id="password"
                                placeholder="Type again your password" name="c_password" required onchange="checkPasswordConfirmation()">
                     </div>
+                    <input type="text" hidden name="info" value="">
                     <p id="confirm-text" style="text-align: center;color: red"></p>
                     <button type="submit" class="btn btn-yellow" style="font-weight: bold">Sign Up</button>
                     <p id="signUpText">Do you have an account? <a href="{{('/')}}">Sign In</a></p>

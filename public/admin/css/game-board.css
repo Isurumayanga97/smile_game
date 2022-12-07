@@ -109,13 +109,13 @@ div[role="progressbar"]::before {
 #game-title-text {
     display: inline;
     color: #e58d27;
-    font-size: 100px;
+    font-size: 85px;
 }
 
 #game-title-emoji {
     display: inline;
     color: white;
-    font-size: 50px
+    font-size: 40px
 }
 
 #game-image {

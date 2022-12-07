@@ -176,7 +176,44 @@ function nextGame(value) {
 
 }
 
+function changeMode(mode) {
+    let userId = document.getElementById("user-details").value;
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, change it!'
+    }).then((result) => {
+        $.ajax({
+            type: "POST",
+            url: "http://127.0.0.1:8000/api/change-mode",
+            data: {
+                userId: userId,
+                mode: mode,
+            },
+            success: function (data) {
+                console.log(data);
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Changed!',
+                        'Your mode has been changed.',
+                        'success'
+                    );
+                }
+                location.reload();
+            }
+        });
+    });
+}
+
+
 $(document).ready(function () {
     let solution = document.getElementById("solution").value;
     console.log(solution);
 })
+
+

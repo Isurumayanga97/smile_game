@@ -10,6 +10,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -59,18 +60,19 @@ class RegisterController extends Controller
         return view('auth/register');
     }
 
+    /**
+     * @param UserStoreRequest $request
+     * @return RedirectResponse
+     */
     public function create(UserStoreRequest $request)
     {
-        $validated = $request->validated();
-
         try {
-            User::create([
-                'name' => $validated['name'],
-                'email' => $validated['email'],
-                'password' => Hash::make($validated['password']),
-                'mode'=>'EASY',
-                'info'=>'n publishing and graphic design, Lorem ipsum is a placeholder text commonly'
-            ]);
+            $validated = $request->validated();
+            $user = new User($validated);
+            $user->password = Hash::make($validated['password']);
+            $user->mode = 'EASY';
+            $user->save();
+
             return redirect('/');
         } catch (\Exception $e) {
             return redirect()->back();

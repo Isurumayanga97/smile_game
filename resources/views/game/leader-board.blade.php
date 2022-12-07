@@ -74,10 +74,11 @@
                 <hr>
 
                 <!-- Profile-->
-                <div class="card" style="width: 100%;background: #343a40;border: 1px solid #e58d27">
+                <div class="card" style="width: 100%;background: #343a40;border: 1px solid #e58d27;">
                     <img
                         src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmFjZWJvb2slMjBjb3ZlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
                         class="card-img-top" alt="..." style="height: 100px">
+                    <input type="text" hidden value="{{Auth::id()}}" id="user-details">
                     <div class="card-body">
                         <h5 class="card-title">{{$gameDetails['name']}}</h5>
                         <p class="card-text">{{$gameDetails['info']}}</p>
@@ -89,7 +90,7 @@
                                 if (is_null($gameDetails['bonus'])){
                                     echo '0 Bonus';
                                 }else{
-                                    echo $gameDetails['bonus']['no_of_bonus'];
+                                    echo $gameDetails['bonus']['no_of_bonus'].' Bonus';
                                 }
                                 ?>
                             </h5></li>
@@ -108,11 +109,16 @@
                         <form class="card glass p-4">
                             <h5 class="h5 mb-5">Select Mode</h5>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success">Easy</button>
-                                <button type="button" class="btn btn-secondary">Medium</button>
-                                <button type="button" class="btn btn-danger">Hard</button>
+                                <button type="button" class="btn btn-success" onclick="changeMode(1)">Easy</button>
+                                <button type="button" class="btn btn-secondary" onclick="changeMode(2)">Medium</button>
+                                <button type="button" class="btn btn-danger" onclick="changeMode(3)">Hard</button>
                             </div>
                         </form>
+
+                        <div class="mt-2">
+                            <a class="btn btn-primary w-100" style="background-color: #3b5998;" href="https://www.facebook.com/" role="button">
+                                <i class="fab fa-facebook-f"></i> Share Profile</a>
+                        </div>
                     </div>
                 </div>
 
@@ -120,17 +126,24 @@
 
         </div>
     </div>
-
-
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="{{ asset('assets/js/app.js') }}"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js">
+
+    <script src="{{ asset('assets/js/number-swiper.js') }}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ asset('assets/js/custom/spinner.js') }}"></script>
+<script src="{{ asset('assets/js/custom/game.js') }}"></script>
+<script src="{{ asset('assets/js/custom/auth.js') }}"></script>
 </body>
 
 

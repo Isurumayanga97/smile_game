@@ -40,7 +40,7 @@
                         <input type="password" class="form-control" id="password"
                                placeholder="Type your password" name="password">
                     </div>
-                    <a href="" id="forgetPassword">Forget password</a>
+                    <a href="{{('forget-password')}}" id="forgetPassword">Forget password</a>
                     <button type="submit" class="btn btn-yellow" style="font-weight: bold">Sign In</button>
                     <p id="signUpText">Don't have an account? <a href="{{('sign-up')}}">Sign Up</a></p>
                 </form>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\UserAttempt;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
@@ -43,6 +45,9 @@ class UserController extends Controller
     }
 
 
+    /**
+     * @return Application|Factory|View
+     */
     public function loadLeaderboard()
     {
         $users = User::all();
@@ -80,6 +85,26 @@ class UserController extends Controller
     public function settings()
     {
         return view('game/setting');
+    }
+
+    public function changeMode(Request $request)
+    {
+        $data = $request->all();
+        $user = User::find($data['userId']);
+
+        if ($data['mode'] == 1) {
+            error_log('--1--');
+            $user->mode = 'EASY';
+        } elseif ($data['mode'] ==2) {
+            error_log('--2--');
+            $user->mode = 'MEDIUM';
+        } else {
+            error_log('--3--');
+            $user->mode = 'HARD';
+        }
+
+        $user->save();
+        return response()->json($user);
     }
 
 
