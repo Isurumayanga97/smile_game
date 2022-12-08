@@ -35,36 +35,11 @@
             <h2 id="select-number-text">Select Number</h2>
             <div class="card card-body border-0 shadow mt-1 justify-content-center">
                 <div class="btn-grid">
-                    <button type="button" class="btn btn-success w-100" id="btn-0"
-                            onclick="nextGame(0)">0
-                    </button>
-                    <button type="button" class="btn btn-success w-100" id="btn-1"
-                            onclick="nextGame(1)">1
-                    </button>
-                    <button type="button" class="btn btn-success w-100" id="btn-2"
-                            onclick="nextGame(2)">2
-                    </button>
-                    <button type="button" class="btn btn-success w-100" id="btn-3"
-                            onclick="nextGame(3)">3
-                    </button>
-                    <button type="button" class="btn btn-success w-100" id="btn-4"
-                            onclick="nextGame(4)">4
-                    </button>
-                    <button type="button" class="btn btn-success w-100" id="btn-5"
-                            onclick="nextGame(5)">5
-                    </button>
-                    <button type="button" class="btn btn-success w-100" id="btn-6"
-                            onclick="nextGame(6)">6
-                    </button>
-                    <button type="button" class="btn btn-success w-100" id="btn-7"
-                            onclick="nextGame(7)">7
-                    </button>
-                    <button type="button" class="btn btn-success w-100" id="btn-8"
-                            onclick="nextGame(8)">8
-                    </button>
-                    <button type="button" class="btn btn-success w-100" id="btn-9"
-                            onclick="nextGame(9)">9
-                    </button>
+                    @for($x = 0; $x < 10; $x++)
+                        <button type="button" class="btn btn-success w-100" id="btn-{{$x}}"
+                                onclick="nextGame({{$x}})">{{$x}}
+                        </button>
+                    @endfor
                 </div>
             </div>
 

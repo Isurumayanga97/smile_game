@@ -163,10 +163,11 @@ function nextGame(value) {
                         }
                     });
                 } else {
+                    let count = data['attempt'] + 1;
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Your answer went wrong! You have ' + data['attempt'] + ' more chances.',
+                        text: 'Your answer went wrong! You have ' + count + ' more chances.',
                         footer: 'Play new game!'
                     });
                 }

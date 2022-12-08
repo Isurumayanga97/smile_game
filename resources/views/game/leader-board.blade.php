@@ -76,7 +76,7 @@
                 <!-- Profile-->
                 <div class="card" style="width: 100%;background: #343a40;border: 1px solid #e58d27;">
                     <img
-                        src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmFjZWJvb2slMjBjb3ZlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                        src="https://cdn.pixabay.com/photo/2018/04/18/14/26/background-image-3330583__480.jpg"
                         class="card-img-top" alt="..." style="height: 100px">
                     <input type="text" hidden value="{{Auth::id()}}" id="user-details">
                     <div class="card-body">

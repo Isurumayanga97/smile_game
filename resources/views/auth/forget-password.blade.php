@@ -20,7 +20,7 @@
 
                     </div>
 
-                    <a href="{{('/')}}" id="forgetPassword">Sign In</a>
+                    <a href="{{('/')}}" id="forgetPassword" style="text-align: center">Sign In</a>
                     <button type="submit" class="btn btn-yellow" style="font-weight: bold"> Send Password Reset Link</button>
                 </form>
             </div>
