@@ -48,15 +48,6 @@ To run tests, run the following command
   npm run test
 ```
 
-
-## API Reference
-
-#### Get game answer ans solution
-
-```http
-  GET https://marcconrad.com/uob/smile/api.php
-```
-
 ## Tech Stack
 
 **Framework:** Larave 8
